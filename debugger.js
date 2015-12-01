@@ -1,8 +1,10 @@
-$(document).ready(function () {
+(function () {
+
+    
+    valPanelHtml=
 
 
-
-    function createThePanel() {
+    var createThePanel = function () {
 
 
 
@@ -11,29 +13,40 @@ $(document).ready(function () {
 
     }
 
-    function removeThePanel() {
+    var removeThePanel = function () {
 
 
-    }
-
-
-
+    };
 
 
 
 
-    function logErrorToScreen() {
-
-
-    }
 
 
 
-    function minimizeThePanel() {
+    var logErrorToScreen = function () {
+
+
+    };
 
 
 
-    }
+    var minimizeThePanel = function () {
+
+
+
+    };
+
+    var init = function () {
+
+    };
+
+
+
+    // Public API
+    window.debugger = {
+        init: init
+    };
 
 
 
@@ -59,4 +72,4 @@ $(document).ready(function () {
         return suppressErrorAlert;
     };
 
-})
+})();
