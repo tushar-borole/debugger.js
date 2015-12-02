@@ -19,17 +19,23 @@
         log: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
-            logErrorToScreen(postData);
+            logErrorToScreen(postData,'log-error');
 
         },
         info: function (text) {
-
+            var postData = '';
+            postData = JSON.stringify(text);
+            logErrorToScreen(postData,'info-error');
         },
         warn: function (text) {
-
+            var postData = '';
+            postData = JSON.stringify(text);
+            logErrorToScreen(postData,'warn-error');
         },
         error: function (text) {
-
+            var postData = '';
+            postData = JSON.stringify(text);
+            logErrorToScreen(postData,'error-error');
         }
     };
 
@@ -87,8 +93,8 @@
 
 
 
-    var logErrorToScreen = function (text) {
-        var textHTML = '<li>' + text + '<li>';
+    var logErrorToScreen = function (text,classname) {
+        var textHTML = '<li class='+classname+'>' + text + '<li>';
         $('#log-container').append(textHTML);
 
     };
@@ -137,7 +143,7 @@
 
 
     window.onerror = function (msg, url, line, col, error) {
-        logErrorToScreen(msg)
+        logErrorToScreen(msg,'error-error')
 
 
 

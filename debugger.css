@@ -33,17 +33,18 @@
 }
 
 .console-panel-container .console-header .console-action-btn a {
-  background-color: #cb5656;
-border-radius: 2px;
-color: white;
-height: 17px;
-padding: 1px 3px;
-text-align: center;
-width: 17px;
+    background-color: #cb5656;
+    border-radius: 2px;
+    color: white;
+    height: 17px;
+    padding: 1px 3px;
+    text-align: center;
+    width: 17px;
 }
 
-.console-panel-container #log-container{
+.console-panel-container #log-container {
     margin: 0px;
+    padding: 0px;
 }
 
 .console-panel-container #log-container li {
@@ -70,4 +71,14 @@ width: 17px;
     padding: 0 5px;
     text-align: center;
     width: auto;
+}
+
+.console-panel-container #log-container .info-error{
+    background-color: #D9EDF7;
+}
+.console-panel-container #log-container .warn-error{
+    background-color: #FCF8E3;
+}
+.console-panel-container #log-container .error-error{
+    background-color: #F2DEDE;
 }
