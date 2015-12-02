@@ -19,14 +19,16 @@
 }
 
 .console-panel-container .console-header .console-action-btn {
-    float: right;
-    margin-right: 20px;
-    padding-top: 4px;
+     float: right;
+    margin-right: 6px;
+    padding-top: 7px;
+    margin-bottom: 0px;
 }
 
 .console-panel-container .console-header .console-action-btn li {
     list-style: none;
-    display: inline
+    display: inline;
+       padding: 3px;
 }
 
 .console-panel-container .console-header .console-action-btn a {
@@ -37,4 +39,9 @@
     height: 17px;
     text-align: center;
     width: 17px;
+}
+
+.console-panel-container #log-container li{
+    list-style: none;
+    
 }
