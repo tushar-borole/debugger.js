@@ -5,10 +5,11 @@
     width: 100%;
 }
 
-.console-panel-container .console-body{
+.console-panel-container .console-body {
     height: 200px;
     width: 100%;
     background-color: white;
+    overflow: scroll;
 }
 
 .console-panel-container .console-header {
@@ -19,29 +20,54 @@
 }
 
 .console-panel-container .console-header .console-action-btn {
-     float: right;
+    float: right;
     margin-right: 6px;
-    padding-top: 7px;
+    padding-top: 3px;
     margin-bottom: 0px;
 }
 
 .console-panel-container .console-header .console-action-btn li {
     list-style: none;
     display: inline;
-       padding: 3px;
+    padding: 3px;
 }
 
 .console-panel-container .console-header .console-action-btn a {
+  background-color: #cb5656;
+border-radius: 2px;
+color: white;
+height: 17px;
+padding: 1px 3px;
+text-align: center;
+width: 17px;
+}
+
+.console-panel-container #log-container{
+    margin: 0px;
+}
+
+.console-panel-container #log-container li {
+    list-style: none;
+}
+
+.console-panel-container .left-action-button {
+    display: block;
+    float: left;
+    margin-bottom: 0;
+    margin-top: 2px;
+}
+
+.console-panel-container .left-action-button li {
+    list-style: none;
+}
+
+.console-panel-container .left-action-button li a {
     background-color: #cb5656;
     border-radius: 2px;
     color: white;
     display: inline-block;
-    height: 17px;
+    height: auto;
+    padding: 0 5px;
     text-align: center;
-    width: 17px;
-}
-
-.console-panel-container #log-container li{
-    list-style: none;
-    
+    width: auto;
 }
