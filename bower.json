@@ -1,0 +1,23 @@
+{
+  "name": "debugger.js",
+  "description": "debug you javascript error easily",
+  "version": "0.0.1",
+  "authors": [
+    "Tushar Borole <tushariscoolster@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tushariscoolster/debugger.js"
+  },
+  "homepage": "http://tushariscoolster.github.io/debugger.js",
+  "license": "LGPL-2.1",
+  "main": "debugger.js",
+  "keywords": ["/debugger.js",
+               "debugger"
+  ],
+  "ignore": [
+    "gh-pages",
+    "node_modules",
+    "bower_components"
+  ]
+}
