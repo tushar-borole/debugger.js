@@ -2,6 +2,7 @@
 
     var panelHtml = '<div class="console-panel-container">' +
         '<div class="console-header">' +
+        '<ul class="left-action-button"><li><a id="clear" href="#">clear</a></li></ul>' +
         ' <ul class="console-action-btn">' +
         '<li><a id="minimize" href="#"><i class="fa fa-minus"></i></a></li>' +
         '<li><a id="close" href="#"><i class="fa fa-times"></i></a></li>' +
@@ -14,7 +15,7 @@
 
 
     // define a new console
-    var console = {
+    var logObject = {
         log: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
@@ -60,12 +61,24 @@
         $('.console-panel-container #minimize').click(function () {
             minimizeThePanel();
         });
-          $('.console-panel-container #close').click(function () {
+        $('.console-panel-container #close').click(function () {
             removeThePanel();
+        });
+        $('.console-panel-container #clear').click(function () {
+            clearTheConsole();
         });
 
 
     };
+
+    /**
+     * @description clear the console   
+     * @author Tushar Borole
+     */
+    var clearTheConsole = function () {
+
+        $('#log-container').empty();
+    }
 
 
 
@@ -104,7 +117,7 @@
 
         createThePanel();
         initializeEvents();
-        window.console = console; // overrite the log functionnality
+        window.console = logObject; // overrite the log functionnality
 
     };
 
@@ -124,7 +137,9 @@
 
 
     window.onerror = function (msg, url, line, col, error) {
-        //console.log(msg)
+        logErrorToScreen(msg)
+
+
 
     };
 
