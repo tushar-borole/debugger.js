@@ -28,6 +28,12 @@ npm install debugger.js
 | debuggerLog.init(); | `Initilaize the console` 
 | debuggerLog.destroy(); | `destroy the console` 
 
+### Keys
+
+|                  | Option| 
+ ----------------- | ---------------------------- | ------------------
+| alt+o | `open debugger` 
+| alt+c | `clear console` 
 
 ----------
 
