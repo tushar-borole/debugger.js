@@ -29,8 +29,16 @@ $(document).ready(function () {
 
     })
 
+    
+     var options = {
+        'enableKeys': true,
+        'keys':{
+            'open':'alt+o',
+            'clear':'alt+c'
+        }
+    }
 
-    debuggerLog.init();
+    debuggerLog.init(options);
   
     var testDebug = {
         'test': 'check'

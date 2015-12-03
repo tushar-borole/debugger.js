@@ -13,6 +13,14 @@
 
 
 
+    var defaults = {
+        'enableKeys': true,
+        'keys': {
+            'open': 'alt+o',
+            'clear': 'alt+c'
+        }
+    }
+
 
     // define a new console
     var logObject = {
@@ -59,10 +67,10 @@
 
 
     var enableKeyMode = function () {
-        $(document).on('keydown', null, 'alt+c', function () {
+        $(document).on('keydown', null, defaults.keys.clear, function () {
             clearTheConsole()
         });
-        $(document).on('keydown', null, 'alt+o', function () {
+        $(document).on('keydown', null, defaults.keys.open, function () {
 
             if ($(".console-panel-container").length) {
                 removeThePanel();
@@ -70,7 +78,7 @@
                 createThePanel();
             }
 
-           
+
         });
     }
 
@@ -135,11 +143,14 @@
 
     };
 
-    var init = function () {
-
+    var init = function (data) {
+        defaults = $.extend(defaults, data);
         createThePanel();
         initializeEvents();
-        enableKeyMode()
+
+        if (defaults.enableKeys) {
+            enableKeyMode()
+        }
         window.console = logObject; // overrite the log functionnality
 
     };
@@ -160,10 +171,7 @@
 
 
     window.onerror = function (msg, url, line, col, error) {
-        logErrorToScreen(msg, 'error-error')
-
-
-
+        logErrorToScreen(msg, 'error-error');
     };
 
 })();
