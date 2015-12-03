@@ -4,6 +4,20 @@
 
 The motive of debugger js was to create a cross browser console, so that every person can debug in any browser with same look and feel
 
+
+## Features
+* Easy configurable
+* Cross platform
+* Works on mobile device
+
+
+## Requirements
+
+
+* jquery
+* fontawsome
+
+
 # Getting Started
 
 Install via bower
@@ -41,6 +55,16 @@ one can configure the opions for console, below are setting needed
 ```
 
 ### Keys
+
+|                  | Option| 
+ ----------------- | ---------------------------- | ------------------
+| alt+o | `open debugger` 
+| alt+c | `clear console` 
+
+### Todo
+
+- [x] Keys support
+- [ ] Find in html
 
 |                  | Option| 
  ----------------- | ---------------------------- | ------------------
