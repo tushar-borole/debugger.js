@@ -25,8 +25,20 @@ npm install debugger.js
 
 |                  | Option| 
  ----------------- | ---------------------------- | ------------------
-| debuggerLog.init(); | `Initilaize the console` 
-| debuggerLog.destroy(); | `destroy the console` 
+| debuggerLog.init(options); | `Initilaize the console` 
+| debuggerLog.destroy(); | `destroy the console`
+
+one can configure the opions for console, below are setting needed
+
+```js
+ var options = {
+        'enableKeys': true,
+        'keys':{
+            'open':'alt+o',
+            'clear':'alt+c'
+        }
+    }
+```
 
 ### Keys
 
