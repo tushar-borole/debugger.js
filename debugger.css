@@ -82,3 +82,7 @@
 .console-panel-container #log-container .error-error{
     background-color: #F2DEDE;
 }
+
+.console-panel-container #log-container .xhr-log{
+    background-color: #E5E5E5;
+}

@@ -1,26 +1,36 @@
 $(document).ready(function () {
-
+    debuggerLog.init(options);
 
     $('#console').click(function () {
 
         console.log('Console')
 
     })
-     $('#info').click(function () {
+    $('#info').click(function () {
 
         console.info('Info in console')
 
     })
-      $('#warn').click(function () {
+    $('#warn').click(function () {
 
         console.warn('warn in console')
 
     })
-       $('#error').click(function () {
+    $('#error').click(function () {
 
         console.error('error in console')
 
     })
+
+    $('#xhr').click(function () {
+
+        $.get('params.json')
+
+        $.post('params.json')
+
+    })
+
+
 
 
     $('#undefined').click(function () {
@@ -29,20 +39,20 @@ $(document).ready(function () {
 
     })
 
-    
-     var options = {
+
+    var options = {
         'enableKeys': true,
-        'keys':{
-            'open':'alt+o',
-            'clear':'alt+c'
+        'keys': {
+            'open': 'alt+o',
+            'clear': 'alt+c'
         }
     }
 
-    debuggerLog.init(options);
-  
+
+
     var testDebug = {
         'test': 'check'
     }
 
-console.log(testDebug)
+    console.log(testDebug)
 })

@@ -2,7 +2,7 @@
 
 # debugger.js
 
-The motive of debugger js was to create a cross browser console, so that every person can debug in any browser with same look and feel
+The motive of debugger js was to create a cross browser console, so that every person can debug in any browser with same look and feel. With help of debugger.js one can easily debug the website or phonegap application on mobile device.
 
 
 
@@ -19,6 +19,13 @@ Install via npm
 
 ```sh
 npm install debugger.js
+```
+
+Include in html
+```html
+ <link rel="stylesheet" href="debugger.css">
+ <script src="debugger-lib.js"></script>
+<script src="debugger.js"></script>
 ```
 
 
@@ -78,6 +85,8 @@ one can configure the opions for console, below are setting needed
 
 - [x] Keys support
 - [ ] Find in html
+- [ ] XHR Request
+- [ ] Sorting of different type of console
 
 
 
