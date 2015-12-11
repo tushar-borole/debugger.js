@@ -3,17 +3,18 @@
     position: fixed;
     border: 1px solid #696969;
     width: 100%;
+    height: 200px;
 }
 
 .console-panel-container .console-body {
-    height: 200px;
+    height: 100%;
     width: 100%;
     background-color: white;
     overflow: scroll;
 }
 
 .console-panel-container .console-header {
-    height: 30px;
+    height: 32px;
     width: 100%;
     border-bottom: 1px solid #696969;
     background-color: #e7e7e7;
@@ -73,16 +74,34 @@
     width: auto;
 }
 
-.console-panel-container #log-container .info-error{
+.console-panel-container #log-container .info-error {
     background-color: #D9EDF7;
 }
-.console-panel-container #log-container .warn-error{
+
+.console-panel-container #log-container .warn-error {
     background-color: #FCF8E3;
 }
-.console-panel-container #log-container .error-error{
+
+.console-panel-container #log-container .error-error {
     background-color: #F2DEDE;
 }
 
-.console-panel-container #log-container .xhr-log{
+.console-panel-container #log-container .xhr-log {
     background-color: #E5E5E5;
+}
+
+.console-panel-container.minimized-console {
+    height: auto;
+}
+
+.console-panel-container .console-header .resize-handle {
+    background-color: #a4a4a4;
+    height: 3px;
+    width: 100%;
+     cursor:n-resize;
+}
+
+.console-panel-container.minimized-console .console-header {
+    bottom: 0;
+    position: absolute;
 }

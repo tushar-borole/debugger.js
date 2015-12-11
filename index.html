@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="demo/stylesheets/github-light.css">
     <link rel="stylesheet" href="debugger.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/overcast/jquery-ui.css">
     <script src="demo/javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -34,10 +36,15 @@
 
         </header>
         <section>
+            <div id="resizable">
+
+            </div>
+
             <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Debugger.js</h3>
 
             <p>Debbugger.js help you to log the error in screen itself, so that you dont have to open the console and look for the error</p>
+
 
             <h3>
 <a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h3>
@@ -56,14 +63,16 @@
             <p>
                 <a target="_blank" href="https://github.com/tushariscoolster/debugger.js#documentation">Documentation</a>
             </p>
+        </section>
+    </div>
 
 
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script src="demo/javascripts/jquery-1.11.3.min.js"></script>
+    <script src="debugger-lib.js"></script>
+    <script src="debugger.js"></script>
+    <script src="demo/javascripts/demo.js"></script>
 
-            <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-            <script src="demo/javascripts/jquery-1.11.3.min.js"></script>
-            <script src="debugger-lib.js"></script>
-            <script src="debugger.js"></script>
-            <script src="demo/javascripts/demo.js"></script>
 </body>
 
 </html>

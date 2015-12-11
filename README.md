@@ -89,6 +89,7 @@ one can configure the opions for console, below are setting needed
 - [ ] Find in html
 - [ ] XHR Request
 - [ ] Sorting of different type of console
+- [ ] Resizable
 
 
 
