@@ -31,6 +31,7 @@ module.exports = function (grunt)
                     'bower.json',
                     'debugger.js',
                     'debugger.css',
+                    'debugger-lib.js',
                     'package.json'
                 ],
                 createTag: true,

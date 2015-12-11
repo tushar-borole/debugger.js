@@ -2,6 +2,8 @@
 
 # debugger.js
 
+![](logo.png)
+
 The motive of debugger js was to create a cross browser console, so that every person can debug in any browser with same look and feel. With help of debugger.js one can easily debug the website or phonegap application on mobile device.
 
 
@@ -87,6 +89,7 @@ one can configure the opions for console, below are setting needed
 - [ ] Find in html
 - [ ] XHR Request
 - [ ] Sorting of different type of console
+- [ ] Resizable
 
 
 
