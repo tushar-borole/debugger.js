@@ -144,6 +144,10 @@
     };
 
 
+    /**
+     * @description ajax interceptor
+     * @author Tushar Borole
+     */
     var enableXhrInterceptor = function () {
 
 
@@ -160,7 +164,7 @@
         });
 
 
-    }
+    };
 
     var init = function (data) {
         defaults = $.extend(defaults, data);
