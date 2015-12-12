@@ -19,6 +19,9 @@
     border-bottom: 1px solid #696969;
     background-color: #e7e7e7;
 }
+.console-panel-container .console-header .left-action-button li{
+    display: inline-block;
+}
 
 
 .console-panel-container .console-header .console-action-btn {

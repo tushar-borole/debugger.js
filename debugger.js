@@ -1,16 +1,8 @@
+
+
 (function () {
 
-    var panelHtml = '<div class="console-panel-container">' +
-        '<div class="console-header">' +
-        '<div class="resize-handle"></div>' +
-        '<ul class="left-action-button"><li><a id="clear" href="#">clear</a></li></ul>' +
-        ' <ul class="console-action-btn">' +
-        '<li><a id="minimize" href="#"><i class="fa fa-minus"></i></a></li>' +
-        '<li><a id="close" href="#"><i class="fa fa-times"></i></a></li>' +
-        '</ul>' +
-        '</div>' +
-        '<div class="console-body"><ul id="log-container"></ul></div>' +
-        '</div>';
+    var panelHtml = '<div class="console-panel-container"> <div class="console-header"> <div class="resize-handle"></div><ul class="left-action-button"> <li><a id="clear" href="#">clear</a></li><li> <input class="filter-checkbox" data-key="log" type="checkbox"/>Log</li><li> <input class="filter-checkbox" data-key="error" type="checkbox"/>Errors</li><li> <input class="filter-checkbox" data-key="warning" type="checkbox"/>Warnings</li><li> <input class="filter-checkbox" data-key="info" type="checkbox"/>Info</li><li> <input class="filter-checkbox" data-key="XHR" type="checkbox"/>XHR</li></ul> <ul class="console-action-btn"> <li><a id="minimize" href="#"><i class="fa fa-minus"></i></a></li><li><a id="close" href="#"><i class="fa fa-times"></i></a></li></ul> </div><div class="console-body"> <ul id="log-container"></ul> </div></div>';
 
 
 
@@ -20,7 +12,7 @@
             'open': 'alt+o',
             'clear': 'alt+c'
         }
-    }
+    };
 
 
     // define a new console
@@ -28,23 +20,23 @@
         log: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
-            logErrorToScreen(postData, 'log-error');
+            logErrorToScreen(postData, 'log-error', 'log');
 
         },
         info: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
-            logErrorToScreen(postData, 'info-error');
+            logErrorToScreen(postData, 'info-error', 'info');
         },
         warn: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
-            logErrorToScreen(postData, 'warn-error');
+            logErrorToScreen(postData, 'warn-error', 'warning');
         },
         error: function (text) {
             var postData = '';
             postData = JSON.stringify(text);
-            logErrorToScreen(postData, 'error-error');
+            logErrorToScreen(postData, 'error-error', 'error');
         }
     };
 
@@ -63,6 +55,13 @@
      * @author Tushar Borole
      */
     var createThePanel = function () {
+        /*  $.ajax({
+              url: "template.html"
+          }).done(function (data) {
+
+              $('body').append(data)
+          });*/
+
         $('body').append(panelHtml);
     };
 
@@ -75,9 +74,38 @@
     };
 
 
+    /**
+     * filter diffeneret type of log in console
+     * @author Tushar Borole
+     */
+    var filterLogs = function () {
+        $('.filter-checkbox').click(function () {
+            var checkedCheckbox = [];
+            $('.filter-checkbox').each(function () {
+                var isChecked = $(this).is(':checked');
+                if (isChecked) {
+                    var checkboxChecked = $(this).attr("data-key");
+                    checkedCheckbox.push(checkboxChecked);
+                }
+
+
+            });
+            $('#log-container li').hide();
+            $.each(checkedCheckbox, function (index, value) {
+                $('#log-container [data-key=' + value + ']').show();
+            });
+
+
+
+        });
+
+
+    };
+
+
     var enableKeyMode = function () {
         $(document).on('keydown', null, defaults.keys.clear, function () {
-            clearTheConsole()
+            clearTheConsole();
         });
         $(document).on('keydown', null, defaults.keys.open, function () {
 
@@ -89,7 +117,7 @@
 
 
         });
-    }
+    };
 
 
 
@@ -117,7 +145,7 @@
      */
     var clearTheConsole = function () {
         $('#log-container').empty();
-    }
+    };
 
 
 
@@ -127,8 +155,8 @@
 
 
 
-    var logErrorToScreen = function (text, classname) {
-        var textHTML = '<li class=' + classname + '>' + text + '<li>';
+    var logErrorToScreen = function (text, classname, key) {
+        var textHTML = '<li data-key=' + key + ' class=' + classname + '>' + text + '<li>';
         $('#log-container').append(textHTML);
 
     };
@@ -164,8 +192,8 @@
 
 
         xhook.before(function (request) {
-            var xhrText = request.method + " " + request.url
-            logErrorToScreen(xhrText, 'xhr-log');
+            var xhrText = request.method + " " + request.url;
+            logErrorToScreen(xhrText, 'xhr-log', 'XHR');
             //override request header 'Content-type'
             //request.headers['Content-type'] = 'awesome/file';
         });
@@ -184,9 +212,10 @@
         initializeEvents();
         enableXhrInterceptor();
         resizeConsole();
+        filterLogs();
 
         if (defaults.enableKeys) {
-            enableKeyMode()
+            enableKeyMode();
         }
         window.console = logObject; // overrite the log functionnality
 
