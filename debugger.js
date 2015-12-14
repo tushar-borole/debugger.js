@@ -1,8 +1,6 @@
-
-
 (function () {
 
-    var panelHtml = '<div class="console-panel-container"> <div class="console-header"> <div class="resize-handle"></div><ul class="left-action-button"> <li><a id="clear" href="#">clear</a></li><li> <input class="filter-checkbox" data-key="log" type="checkbox"/>Log</li><li> <input class="filter-checkbox" data-key="error" type="checkbox"/>Errors</li><li> <input class="filter-checkbox" data-key="warning" type="checkbox"/>Warnings</li><li> <input class="filter-checkbox" data-key="info" type="checkbox"/>Info</li><li> <input class="filter-checkbox" data-key="XHR" type="checkbox"/>XHR</li></ul> <ul class="console-action-btn"> <li><a id="minimize" href="#"><i class="fa fa-minus"></i></a></li><li><a id="close" href="#"><i class="fa fa-times"></i></a></li></ul> </div><div class="console-body"> <ul id="log-container"></ul> </div></div>';
+    var panelHtml = '<div class="console-panel-container"> <div class="console-header"> <div class="resize-handle"></div><ul class="left-action-button"> <li><a id="clear" href="#">clear</a></li><li> <input class="filter-checkbox" data-key="log" type="checkbox"/>Log</li><li> <input class="filter-checkbox" data-key="error" type="checkbox"/>Errors</li><li> <input class="filter-checkbox" data-key="warning" type="checkbox"/>Warnings</li><li> <input class="filter-checkbox" data-key="info" type="checkbox"/>Info</li><li> <input class="filter-checkbox" data-key="XHR" type="checkbox"/>XHR</li></ul> <ul class="console-action-btn"> <input type="text" id="searchbox" placeholder="Search by text" class="console-search-text"/> <li><a id="minimize" href="#"><i class="fa fa-minus"></i></a></li><li><a id="close" href="#"><i class="fa fa-times"></i></a></li></ul> </div><div class="console-body"> <ul id="log-container"></ul> </div></div>';
 
 
 
@@ -183,6 +181,23 @@
 
     };
 
+    /**
+     * @description highlight text in dom   
+     * @author Tushar Borole
+     */
+    var searchText = function () {
+        $('#searchbox').keyup(function () {
+
+            var text = $(this).val();
+            $("body").unhighlight();
+            $("body").highlight(text);
+
+
+        })
+
+
+    };
+
 
     /**
      * @description ajax interceptor
@@ -213,11 +228,12 @@
         enableXhrInterceptor();
         resizeConsole();
         filterLogs();
+        searchText();
 
         if (defaults.enableKeys) {
             enableKeyMode();
         }
-        window.console = logObject; // overrite the log functionnality
+        //window.console = logObject; // overrite the log functionnality
 
     };
 
